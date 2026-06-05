@@ -3,6 +3,10 @@ import torch
 import torch.nn as nn
 
 class LearnedPositionalEncoding(nn.Module):
+    """
+    A layer that adds learnable position information to token embeddings
+    so the Transformer knows the order of words.
+    """
     def __init__(self, max_len: int, d_model: int):
         super().__init__() #Run the setup code inside nn.Module first
         self.emb = nn.Embedding(max_len, d_model) #Create a learnable lookup table that stores one vector for each position
